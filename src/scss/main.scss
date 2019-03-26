@@ -1,0 +1,79 @@
+body {
+  max-width: 60em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+div#game {
+  display: grid;
+  gap: 0 4ch;
+  grid-template: "player monster";
+}
+
+div.opponent {
+  background-color: #eee;
+  padding: 1em;
+}
+
+.opponent__infos {
+  text-align: center;
+  line-height: 2em;
+}
+
+.opponent__status {
+  display: block;
+}
+
+.opponent__name {
+  display: block;
+  text-transform: uppercase;
+}
+
+.opponent__health {
+  background-color: #ddd;
+}
+
+.health__bar {
+  background-color: hsl(120, 50%, 50%);
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  line-height: 2em;
+}
+
+div#player {
+  grid-area: player;
+}
+
+div#monster {
+  grid-area: monster;
+}
+
+div#controls > div {
+  text-align: center;
+  margin: 2em auto;
+}
+
+button {
+  font-size: 1em;
+  padding: 1em;
+}
+
+div#log > p {
+  text-align: center;
+}
+
+div#log > p:nth-child(odd) {
+  background: #F9F;
+}
+
+div#log > p:nth-child(even) {
+  background: #99F;
+}
+
+
+

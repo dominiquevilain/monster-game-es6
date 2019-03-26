@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="./dist/css/main.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Monster Game</h1>
+<div id="game">
+    <template class="opponent">
+        <div class="opponent">
+            <h2 class="opponent__infos">
+                <span class="opponent__status"></span>
+                <span class="opponent__name"></span>
+            </h2>
+            <div class="health opponent__health">
+                <div class="health__bar">
+                    <span class="health__value"></span>
+                </div>
+            </div>
+        </div>
+    </template>
+</div>
+<div id="controls">
+    <template id="not-playing">
+        <div>
+            <button id="start-new-game">Start New Game ✅</button>
+        </div>
+    </template>
+    <template id="playing">
+        <div>
+            <button id="attack">Attack 🏹</button>
+            <button id="special-attack">Special Attack 🛸</button>
+            <button id="heal">Heal 💉</button>
+            <button id="give-up">Give Up ⚰️</button>
+        </div>
+    </template>
+</div>
+<div id="log"></div>
+<script src="./dist/js/main.js"></script>
+</body>
+</html>
