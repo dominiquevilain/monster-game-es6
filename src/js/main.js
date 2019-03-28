@@ -71,7 +71,7 @@ const game = {
         opponent.healthValue += damage
         state.addMessageToLog(settings.HEAL.message(opponent, damage))
       } else {
-        opponent.healthValue = 100
+        opponent.healthValue = settings.HEALTH_MAX_VALUE
         state.addMessageToLog(`${opponent.name} est au maximum de santé`)
       }
     })
