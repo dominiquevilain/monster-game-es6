@@ -63,7 +63,7 @@ const game = {
     }
   },
   heal () {
-    if (state.healCount++ < settings.MAX_HEAL_ACTION) {
+    if (state.healCount < settings.MAX_HEAL_ACTION) {
       state.opponents.forEach(opponent => {
         const damage = this.getRandomValue(settings.HEAL.type)
         if (opponent.healthValue + damage <= settings.HEALTH_MAX_VALUE) {
@@ -74,6 +74,7 @@ const game = {
           state.addMessageToLog(`${opponent.name} est au maximum de santé`)
         }
       })
+      state.healCount++
     } else {
       state.addMessageToLog(`Vous avez épuisé toutes les réserves de soins`)
     }
