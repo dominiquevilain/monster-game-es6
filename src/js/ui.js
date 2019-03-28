@@ -2,13 +2,6 @@ import { DEFAULT_GAME_STATUS, IN_GAME_STATUS } from './settings'
 import state from './state'
 
 const ui = {
-  gameDiv: null,
-  controlsDiv: null,
-  logDiv: null,
-  opponentTemplate: null,
-  notPlayingTemplate: null,
-  playingTemplate: null,
-  defeatModalTemplate: null,
   init () {
     this.gameDiv = document.querySelector('#game')
     this.controlsDiv = document.querySelector('#controls')
