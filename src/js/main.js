@@ -5,26 +5,24 @@ import ui from './ui'
 const game = {
   init () {
     ui.init()
-    ui.controlsDiv.addEventListener('click', e => {
-      this.dispatchAction(e)
-    })
+    ui.controlsDiv.addEventListener('click', this.dispatchAction)
   },
   dispatchAction (e) {
     switch (e.target.id) {
       case settings.START_NEW_GAME_BUTTON_ID:
-        this.startNewGame()
+        game.startNewGame()
         break
       case settings.ATTACK['button-id']:
-        this.attack(settings.ATTACK)
+        game.attack(settings.ATTACK)
         break
       case settings.SPECIAL_ATTACK['button-id']:
-        this.attack(settings.SPECIAL_ATTACK)
+        game.attack(settings.SPECIAL_ATTACK)
         break
       case settings.HEAL['button-id']:
-        this.heal()
+        game.heal()
         break
       case settings.GIVE_UP_BUTTON_ID:
-        this.giveUp()
+        game.giveUp()
         break
     }
   },
