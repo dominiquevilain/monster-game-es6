@@ -8,7 +8,7 @@ export const ATTACK = {
   'max-impact': -7,
   'button-id': 'attack',
   message (opponent, damage) {
-    return `${opponent.name} a subi une attaque spéciale de ${Math.abs(damage)}. Il en est à ${opponent.healthValue}`
+    return `${opponent.name} a subi une attaque simple de ${Math.abs(damage)}. Il en est à ${opponent.healthValue}`
   }
 }
 export const SPECIAL_ATTACK = {
@@ -16,7 +16,7 @@ export const SPECIAL_ATTACK = {
   'max-impact': -14,
   'button-id': 'special-attack',
   message (opponent, damage) {
-    return `${opponent.name} a subi une attaque simple de ${Math.abs(damage)}. Il en est à ${opponent.healthValue}`
+    return `${opponent.name} a subi une attaque spéciale de ${Math.abs(damage)}. Il en est à ${opponent.healthValue}`
   }
 }
 export const HEAL = {
