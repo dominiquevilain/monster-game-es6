@@ -1,4 +1,9 @@
-import { DEFAULT_GAME_STATUS, IN_GAME_STATUS } from './settings'
+import {
+  DEFAULT_GAME_STATUS,
+  HEAL,
+  IN_GAME_STATUS,
+  MAX_HEAL_ACTION
+} from './settings'
 import state from './state'
 
 const ui = {
@@ -33,6 +38,9 @@ const ui = {
         break
       case IN_GAME_STATUS:
         controlsNode = document.importNode(this.playingTemplate.content, true)
+        this.healButton = controlsNode.querySelector(`#${HEAL['button-id']}`)
+        this.healButtonText = this.healButton.textContent
+        this.updateHealButton()
         break
       default:
         console.error(`${state.status} is not a valid case when chosing which controls to show`)
@@ -50,23 +58,32 @@ const ui = {
     return window.confirm(sentence)
   },
   updateAfterAction () {
-    /* Append two last messages of array */
+    this.updateLogDiv()
+    this.updateHealthBarDiv()
+    this.updateHealButton()
+  },
+  updateLogDiv () {
     if (state.messages.length) {
       this.logDiv.insertAdjacentHTML('afterbegin', `<p>${state.messages[state.messages.length - 2]}</p>`)
       this.logDiv.insertAdjacentHTML('afterbegin', `<p>${state.messages[state.messages.length - 1]}</p>`)
     } else {
       this.logDiv.innerHTML = ''
     }
-    /* Update healthbar of each player */
+  },
+  updateHealthBarDiv () {
     state.opponents.forEach(opponent => {
       this.gameDiv.querySelector(`.${opponent.status.toLowerCase()}.health__bar`).style.width = `${opponent.healthValue}%`
       this.gameDiv.querySelector(`.${opponent.status.toLowerCase()}.health__bar`).style.backgroundColor = `hsl(${opponent.healthValue * 1.2},50%,50%`
       this.gameDiv.querySelector(`.${opponent.status.toLowerCase()}.health__bar .health__value`).textContent = opponent.healthValue
     })
   },
+  updateHealButton () {
+    this.healButton.textContent = `${this.healButtonText} ${state.healCount}/${MAX_HEAL_ACTION}`
+  },
   reset () {
     this.buildControlsNodes()
     this.updateAfterAction()
+    this.healButton.textContent = this.healButtonText
   }
 }
 
