@@ -10,4 +10,4 @@ This is an ES6 version, meant to be built using [laravel-mix](https://laravel-mi
 around [webpack](https://webpack.js.org/) from [Jeffrey Way](https://laracasts.com/series/learn-laravel-mix).
  
 After cloning the repo, `npm install` or `yarn install`. Then `npm run hot` 
-or `yarn hot`. Then, point your server to http://localhost:8080
+or `yarn hot`. Then, point your browser to http://localhost:8080
